@@ -40,6 +40,13 @@ export default function Home() {
                 { title, body },
                 { headers: { PinggyAuthHeader: authCode } }
             );
+
+            // reset fields after pressing submit button
+            setTitle("");
+            setBody("");
+            setAuthCode("");
+
+            
             fetchPosts();
         } catch (error) {
             alert("Failed to submit Post.");
