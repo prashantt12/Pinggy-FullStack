@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from '@/styles/Home.module.css';  // Import the CSS file
+import styles from '@/styles/Home.module.css';
 
 export default function Home() {
 
@@ -46,7 +46,7 @@ export default function Home() {
             setBody("");
             setAuthCode("");
 
-            
+
             fetchPosts();
         } catch (error) {
             alert("Failed to submit Post.");
