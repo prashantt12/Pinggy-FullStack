@@ -13,21 +13,12 @@ public class PostService {
     private final List<PostResponseDTO> posts = new ArrayList<>();
 
     public void addPost(PostDTO post, String authHeader) {
-        try{
-            posts.add(new PostResponseDTO(post.getTitle(), post.getBody(), authHeader));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        posts.add(new PostResponseDTO(post.getTitle(), post.getBody(), authHeader));
+        System.out.println("Post added: " + post.getTitle() + " | Header: " + authHeader);
     }
 
     public List<PostResponseDTO> getAllPosts() {
-        try{
-            return posts;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ArrayList<>();   //returning an empty list on failure.
-        }
+        System.out.println("Fetching all posts...");
+        return new ArrayList<>(posts);
     }
-
 }
